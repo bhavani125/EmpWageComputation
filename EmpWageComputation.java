@@ -1,39 +1,23 @@
 
 public class EmpWageComputation {
-    //constant variables
-    public static int isPresent = 1, isPartTime = 2, wagePerHr = 20, maxWorkingHours = 100, daysInMonth = 20;
-    public static int dailyWageArray[] = new int[20];
-    public static int workingHrs, totalWorkingHrs = 0, monthlyWage = 0;
 
-
-    //creating main method
     public static void main(String[] args) {
-        System.out.println("Welcome to Employee Wage Computation problem");
-        //creating object
-        EmpWageComputation wage= new EmpWageComputation();
-        //calling the method  monthlyWage to the object we created
-        wage.monthlyWage();
+        
+        System.out.println("Welcome to employee wage computation problem");
+        
+        
+        //creating an object for companies this part we can say function also
+        
+        Main HappiestMinds = new Main("HappiestMinds",20,30,100);
+        //calling the method here
+        HappiestMinds.CalculatingEmpWages();
+        Main BridgeLabz = new Main("BridgeLabz",25,28,150);
+        ///calling the method
+        BridgeLabz.CalculatingEmpWages();
+        Main Accenture = new Main("Accenture", 30, 20,120);
+        //calling the method
+        Accenture.CalculatingEmpWages();
     }
 
-    // creating a method to calculate monthly wages
-    void monthlyWage() {
-        for (int i=0; i<daysInMonth&& totalWorkingHrs<maxWorkingHours; i++) {
-            int empAttendance= (int)(Math.floor(Math.random() * 10)) % 3;
-            switch (empAttendance) {
-                case 1 -> workingHrs = 8;
-                case 2 -> workingHrs = 4;
-                default -> workingHrs = 0;
-            }
-            totalWorkingHrs+= workingHrs;
-            dailyWageArray[i] = workingHrs * wagePerHr;
-        }
-        for (int j=0; j<daysInMonth; j++) {
-            int day = j+1;
-            System.out.println(" employee Day " + day + " wage is " + dailyWageArray[j]);
-            monthlyWage = monthlyWage + dailyWageArray[j];
-        }
-        System.out.println("\nMonthly wage of an employee is " + monthlyWage);
-    }
 
 }
-
