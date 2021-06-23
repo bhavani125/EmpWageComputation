@@ -1,4 +1,4 @@
-public class Main {
+public class EmpWage {
     //constant variables
     public static final int isFullTime = 1;
     public static final int isPartTime = 2;
@@ -7,9 +7,10 @@ public class Main {
     private final int wagePerHr;
     private final int totalWorkingDays;
     private final int maxHrsPerMonth;
+    private int totalEmpWage;
 
     //we have instance variables so we are defining the constructor
-    public Main(String company, int wagePerHr, int totalWorkingDays, int maxHrsPerMonth) {
+    public EmpWage(String company, int wagePerHr, int totalWorkingDays, int maxHrsPerMonth) {
         this.company = company;
         this.wagePerHr = wagePerHr;
         this.totalWorkingDays = totalWorkingDays;
@@ -38,7 +39,18 @@ public class Main {
             totalEmpHrs += workingHrs;
             System.out.println(" employee : Day " + numberOfWorkingDays + " he worked for " + workingHrs + " hours ");
         }
-        int totalEmpWage = totalEmpHrs * wagePerHr;
+         totalEmpWage = totalEmpHrs * wagePerHr;
         System.out.println(" Total employee wage for a company " + totalEmpWage);
+    }
+
+    @Override
+    public String toString() {
+        return "EmpWage{" +
+                "company='" + company + '\'' +
+                ", wagePerHr=" + wagePerHr +
+                ", totalWorkingDays=" + totalWorkingDays +
+                ", maxHrsPerMonth=" + maxHrsPerMonth +
+                ", totalEmpWage=" + totalEmpWage +
+                '}';
     }
 }
